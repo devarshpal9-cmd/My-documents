@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Documents - Safe Guide</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:Arial,sans-serif;
+  background:#f5f7fb;
+  color:#222;
+  padding-bottom:80px;
+}
+
+header{
+  background:#1769e0;
+  color:white;
+  padding:20px 15px;
+  text-align:center;
+}
+
+header h1{
+  font-size:25px;
+}
+
+header p{
+  margin-top:6px;
+  font-size:14px;
+}
+
+.search{
+  padding:15px;
+}
+
+.search input{
+  width:100%;
+  padding:13px;
+  border:1px solid #ddd;
+  border-radius:12px;
+  font-size:15px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+  padding:0 12px;
+}
+
+.card{
+  background:white;
+  border-radius:16px;
+  padding:18px 10px;
+  text-align:center;
+  box-shadow:0 3px 12px rgba(0,0,0,.08);
+  text-decoration:none;
+  color:#222;
+  display:block;
+  cursor:pointer;
+  transition:.15s;
+}
+
+.card:active{
+  transform:scale(.96);
+}
+
+.icon{
+  font-size:35px;
+  margin-bottom:9px;
+}
+
+.card h3{
+  font-size:16px;
+  margin-bottom:5px;
+}
+
+.card p{
+  font-size:12px;
+  color:#777;
+}
+
+.bottom{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  background:white;
+  border-top:1px solid #ddd;
+  display:flex;
+  justify-content:space-around;
+  padding:12px 5px;
+}
+
+.bottom a{
+  text-decoration:none;
+  color:#1769e0;
+  font-size:13px;
+  font-weight:bold;
+}
+
+.note{
+  margin:15px 12px;
+  background:#fff8df;
+  padding:13px;
+  border-radius:12px;
+  font-size:12px;
+  color:#765d00;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>📁 My Documents</h1>
+  <p>Important Government Services</p>
+</header>
+
+<div class="search">
+  <input
+    type="text"
+    id="search"
+    placeholder="🔎 Service search kare..."
+    onkeyup="searchCards()">
+</div>
+
+<div class="grid" id="cards">
+
+  <!-- 1 Aadhaar -->
+  <a class="card"
+     href="https://myaadhaar.uidai.gov.in/"
+     target="_blank"
+     rel="noopener">
+    <div class="icon">🪪</div>
+    <h3>Aadhaar</h3>
+    <p>MyAadhaar / UIDAI</p>
+  </a>
+
+  <!-- 2 PAN -->
+  <a class="card"
+     href="https://www.incometax.gov.in/"
+     target="_blank"
+     rel="noopener">
+    <div class="icon">💳</div>
+    <h3>PAN Card</h3>
+    <p>Income Tax Portal</p>
+  </a>
+
+  <!-- 3 Driving Licence -->
+  <a class="card"
+     href="https://parivahan.gov.in/"
+     target="_blank"
+     rel="noopener">
+    <div class="icon">🚗</div>
+    <h3>Driving Licence</h3>
+    <p>Parivahan</p>
+  </a>
+
+  <!-- 4 Voter ID -->
+  <a class="card"
+     href="https://voters.eci.gov.in/"
+     target="_blank"
+     rel="noopener">
+    <div class="icon">🗳️</div>
+    <h3>Voter ID</h3>
+    <p>Election Commission</p>
+  </a>
+
+  <!-- 5 Ration Card -->
+  <a class="card"
+     href="https://www.nfsa.gov.in/"
+     target="_blank"
+     rel="noopener">
+    <div class="icon">🍚</div>
+    <h3>Ration Card</h3>
+    <p>NFSA</p>
+  </a>
+
+  <!-- 6 Bank / NPCI -->
+  <a class="card"
+     href="https://www.npci.org.in/"
+     target="_blank"
+     rel="noopener">
+    <div class="icon">🏦</div>
+    <h3>Bank / NPCI</h3>
+    <p>NPCI Services</p>
+  </a>
+
+  <!-- 7 ABHA -->
+  <a class="card"
+     href="https://abha.abdm.gov.in/"
+     target="_blank"
+     rel="noopener">
+    <div class="icon">🏥</div>
+    <h3>ABHA</h3>
+    <p>Health ID</p>
+  </a>
+
+  <!-- 8 e-Shram -->
+  <a class="card"
+     href="https://eshram.gov.in/"
+     target="_blank"
+     rel="noopener">
+    <div class="icon">👷</div>
+    <h3>e-Shram</h3>
+    <p>Worker Portal</p>
+  </a>
+
+  <!-- 9 PM KISAN -->
+  <a class="card"
+     href="https://pmkisan.gov.in/"
+     target="_blank"
+     rel="noopener">
+    <div class="icon">🌾</div>
+    <h3>PM-KISAN</h3>
+    <p>Farmer Services</p>
+  </a>
+
+  <!-- 10 DigiLocker -->
+  <a class="card"
+     href="https://www.digilocker.gov.in/"
+     target="_blank"
+     rel="noopener">
+    <div class="icon">🔐</div>
+    <h3>DigiLocker</h3>
+    <p>Digital Documents</p>
+  </a>
+
+  <!-- 11 Passport -->
+  <a class="card"
+     href="https://www.passportindia.gov.in/"
+     target="_blank"
+     rel="noopener">
+    <div class="icon">🛂</div>
+    <h3>Passport</h3>
+    <p>Passport Seva</p>
+  </a>
+
+  <!-- 12 UMANG -->
+  <a class="card"
+     href="https://web.umang.gov.in/"
+     target="_blank"
+     rel="noopener">
+    <div class="icon">📱</div>
+    <h3>UMANG</h3>
+    <p>Government Services</p>
+  </a>
+
+  <!-- 13 EPFO -->
+  <a class="card"
+     href="https://www.epfindia.gov.in/"
+     target="_blank"
+     rel="noopener">
+    <div class="icon">💰</div>
+    <h3>EPFO / PF</h3>
+    <p>Provident Fund</p>
+  </a>
+
+  <!-- 14 Jobs -->
+  <a class="card"
+     href="https://www.ncs.gov.in/"
+     target="_blank"
+     rel="noopener">
+    <div class="icon">💼</div>
+    <h3>Jobs</h3>
+    <p>National Career Service</p>
+  </a>
+
+  <!-- 15 GST -->
+  <a class="card"
+     href="https://www.gst.gov.in/"
+     target="_blank"
+     rel="noopener">
+    <div class="icon">🧾</div>
+    <h3>GST</h3>
+    <p>GST Portal</p>
+  </a>
+
+  <!-- 16 Railway -->
+  <a class="card"
+     href="https://www.irctc.co.in/"
+     target="_blank"
+     rel="noopener">
+    <div class="icon">🚆</div>
+    <h3>Railway</h3>
+    <p>IRCTC</p>
+  </a>
+
+  <!-- 17 Education -->
+  <a class="card"
+     href="https://www.education.gov.in/"
+     target="_blank"
+     rel="noopener">
+    <div class="icon">🎓</div>
+    <h3>Education</h3>
+    <p>Education Ministry</p>
+  </a>
+
+  <!-- 18 Health -->
+  <a class="card"
+     href="https://www.mohfw.gov.in/"
+     target="_blank"
+     rel="noopener">
+    <div class="icon">⚕️</div>
+    <h3>Health</h3>
+    <p>Health Ministry</p>
+  </a>
+
+  <!-- 19 My Documents -->
+  <a class="card"
+     href="https://www.digilocker.gov.in/"
+     target="_blank"
+     rel="noopener">
+    <div class="icon">📂</div>
+    <h3>My Documents</h3>
+    <p>DigiLocker</p>
+  </a>
+
+  <!-- 20 Profile -->
+  <a class="card"
+     href="https://www.india.gov.in/"
+     target="_blank"
+     rel="noopener">
+    <div class="icon">👤</div>
+    <h3>Profile</h3>
+    <p>India Government</p>
+  </a>
+
+</div>
+
+<div class="note">
+  ⚠️ Important: Aadhaar number, OTP, PIN, password ya bank details
+  is app mein save na karein. Sensitive information sirf official
+  government website par hi enter karein.
+</div>
+
+<div class="bottom">
+  <a href="https://www.india.gov.in/" target="_blank">🏠 Home</a>
+  <a href="https://www.digilocker.gov.in/" target="_blank">📂 Documents</a>
+  <a href="https://www.umang.gov.in/" target="_blank">📱 Services</a>
+</div>
+
+<script>
+function searchCards(){
+
+  let input =
+    document.getElementById("search")
+    .value.toLowerCase();
+
+  let cards =
+    document.querySelectorAll(".card");
+
+  cards.forEach(function(card){
+
+    let text =
+      card.innerText.toLowerCase();
+
+    if(text.includes(input)){
+      card.style.display="block";
+    }else{
+      card.style.display="none";
+    }
+
+  });
+}
+</script>
+
+</body>
+</html>
+<a class="card"
+   href="https://scholarship.up.gov.in/"
+   target="_blank"
+   rel="noopener">
+  <div class="icon">🎓</div>
+  <h3>UP Scholarship</h3>
+  <p>Scholarship Portal</p>
+</a>
